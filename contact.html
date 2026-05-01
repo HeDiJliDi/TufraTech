@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-
-<html class="light" lang="fr"><head>
+<html class="light" lang="fr">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TufraTech — Contact</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
@@ -13,92 +13,25 @@
         theme: {
           extend: {
             "colors": {
-                    "secondary-fixed-dim": "#b8c4fb",
-                    "secondary-container": "#bbc7fe",
-                    "on-surface-variant": "#44474e",
-                    "error-container": "#ffdad6",
-                    "surface-container-lowest": "#ffffff",
-                    "inverse-surface": "#2f3033",
-                    "on-error-container": "#93000a",
-                    "tertiary-fixed": "#cfe5ff",
-                    "surface-dim": "#dad9dd",
-                    "on-primary-fixed-variant": "#2d4770",
-                    "on-background": "#1a1b1e",
-                    "secondary-fixed": "#dde1ff",
-                    "primary-fixed": "#d6e3ff",
-                    "inverse-on-surface": "#f1f0f4",
-                    "on-tertiary-fixed-variant": "#004a79",
-                    "on-primary-container": "#86a0ce",
-                    "surface-bright": "#faf9fd",
-                    "surface-container": "#efedf1",
-                    "surface-variant": "#e3e2e6",
-                    "on-error": "#ffffff",
                     "primary-container": "#1a365e",
-                    "outline-variant": "#c4c6cf",
-                    "on-secondary": "#ffffff",
-                    "on-secondary-container": "#465282",
-                    "secondary": "#505c8d",
-                    "surface": "#faf9fd",
-                    "tertiary-container": "#00385e",
-                    "on-primary-fixed": "#001b3d",
-                    "on-secondary-fixed": "#0a1745",
-                    "primary-fixed-dim": "#adc7f8",
-                    "on-surface": "#1a1b1e",
-                    "on-primary": "#ffffff",
-                    "background": "#faf9fd",
-                    "surface-container-highest": "#e3e2e6",
-                    "on-tertiary": "#ffffff",
-                    "error": "#ba1a1a",
-                    "surface-container-low": "#f4f3f7",
-                    "tertiary-fixed-dim": "#9acbff",
-                    "outline": "#74777f",
-                    "tertiary": "#00223c",
                     "primary": "#002046",
-                    "inverse-primary": "#adc7f8",
-                    "surface-tint": "#455f89",
-                    "surface-container-high": "#e9e7eb",
-                    "on-tertiary-container": "#52a4ed",
-                    "on-secondary-fixed-variant": "#384473",
-                    "on-tertiary-fixed": "#001d34"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
+                    "azure": "#0f78be",
+                    "on-surface-variant": "#44474e",
+                    "outline-variant": "#c4c6cf",
+                    "background": "#faf9fd"
             },
             "spacing": {
-                    "container-max": "1440px",
-                    "margin-page": "48px",
                     "section-gap": "80px",
-                    "stack-md": "16px",
-                    "stack-sm": "8px",
                     "gutter": "24px",
-                    "stack-lg": "32px"
-            },
-            "fontFamily": {
-                    "h3": ["Inter"],
-                    "h1": ["Inter"],
-                    "label-sm": ["Inter"],
-                    "body-lg": ["Inter"],
-                    "body-md": ["Inter"],
-                    "h2": ["Inter"],
-                    "button": ["Inter"]
-            },
-            "fontSize": {
-                    "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
-                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                    "button": ["16px", {"lineHeight": "1", "fontWeight": "600"}]
+                    "stack-lg": "32px",
+                    "stack-md": "16px"
             }
           },
         },
       }
     </script>
 <style>
+        body { font-family: 'Inter', sans-serif; background-color: #faf9fd; }
         .glass-card {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(12px);
@@ -109,184 +42,233 @@
             background: linear-gradient(135deg, #1a365e 0%, #0f78be 100%);
             transition: all 0.3s ease;
         }
-        .primary-gradient-btn:hover {
-            box-shadow: 0 10px 20px -10px rgba(15, 120, 190, 0.5);
-            transform: translateY(-1px);
-        }
         .ai-accent-bg {
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
         }
+        /* Toast Logic */
+        #toast {
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        #toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .loader {
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #3498db;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
-<body class="bg-background font-body-md text-on-background antialiased">
-<!-- TopNavBar -->
+<body class="bg-background text-slate-900 antialiased">
+
+<!-- TOAST NOTIFICATION -->
+<div id="toast" class="fixed bottom-8 right-8 z-[100] pointer-events-none">
+    <div class="bg-[#1a365e] text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-4 border border-blue-400/30">
+        <div class="bg-green-500 rounded-full p-1 flex items-center justify-center">
+            <span class="material-symbols-outlined text-white text-sm">check</span>
+        </div>
+        <div>
+            <p class="font-bold text-sm">Message envoyé !</p>
+            <p class="text-xs opacity-70">Nous reviendrons vers vous sous 24h.</p>
+        </div>
+    </div>
+</div>
+
 <header class="bg-white/90 backdrop-blur-md dark:bg-slate-950/90 docked full-width top-0 sticky z-50 border-b border-slate-100 dark:border-slate-800 shadow-sm">
-<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
-<img 
-  src="logo_tufra.png" 
-  alt="TufraTech Logo" 
-  class="h-10 w-auto"
-/>
-<nav class="hidden md:flex gap-8 items-center">
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200" href="index.html">Accueil</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200" href="secteurs.html">Solution</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200" href="security.html">Sécurité &amp; Intégration</a>
-<a class="text-blue-700 dark:text-blue-400 font-semibold border-b-2 border-blue-700 dark:border-blue-400 pb-1 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200" href="contact.html">Contact</a>
-</nav>
-<button class="primary-gradient-btn text-white px-6 py-2.5 rounded-lg font-button active:scale-95 transition-transform duration-150">
+    <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+        <img src="logo_tufra.png" alt="TufraTech Logo" class="h-10 w-auto"/>
+        
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex gap-8 items-center">
+            <a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200" href="index.html">Accueil</a>
+            <a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200" href="secteurs.html">Solution</a>
+            <a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200" href="security.html">Sécurité &amp; Intégration</a>
+            <a class="text-blue-700 dark:text-blue-400 font-semibold border-b-2 border-blue-700 dark:border-blue-400 pb-1 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200" href="contact.html">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-4">
+            <!-- Desktop Button -->
+            <a href="contact.html" class="hidden md:block primary-gradient-btn text-white px-6 py-2.5 rounded-lg font-button active:scale-95 transition-transform duration-150">
                 Demander une démo
+            </a>
+            
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-primary p-2 focus:outline-none">
+                <span class="material-symbols-outlined text-32px">menu</span>
             </button>
-</div>
+        </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-8 py-6 flex flex-col gap-4 animate-in slide-in-from-top duration-300">
+        <a class="text-slate-600 font-medium py-2 border-b border-slate-50" href="index.html">Accueil</a>
+        <a class="text-slate-600 font-medium py-2 border-b border-slate-50" href="secteurs.html">Solution</a>
+        <a class="text-slate-600 font-medium py-2 border-b border-slate-50" href="security.html">Sécurité &amp; Intégration</a>
+        <a class="text-blue-700 font-semibold py-2 border-b border-slate-50" href="contact.html">Contact</a>
+        <a href="contact.html" class="primary-gradient-btn text-white px-6 py-3 rounded-lg font-button text-center mt-2">
+            Demander une démo
+        </a>
+    </div>
 </header>
-<main class="max-w-7xl mx-auto px-margin-page py-section-gap">
-<!-- Hero Section / CTA Principal -->
-<section class="mb-section-gap text-center">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 mb-stack-lg border border-blue-100">
-<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
-<span class="font-label-sm uppercase tracking-wider">Intelligence documentaire &amp; Assurance</span>
-</div>
-<h1 class="font-h1 text-h1 text-primary mb-stack-md">Discutons de vos flux documentaires</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-                Notre équipe vous accompagne pour analyser vos documents, vos règles métier et vos contraintes SI afin de construire un pilote adapté à votre environnement.
-            </p>
-</section>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
-<!-- Formulaire Complet (Bento Left) -->
-<div class="lg:col-span-8 glass-card p-10 rounded-[16px]">
-<form class="space-y-stack-lg">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-<div class="flex flex-col gap-2">
-<label class="font-label-sm text-on-surface-variant">Nom complet</label>
-<input class="w-full px-4 py-3 rounded-lg border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-secondary-fixed focus:border-secondary transition-all outline-none" placeholder="Jean Dupont" type="text"/>
-</div>
-<div class="flex flex-col gap-2">
-<label class="font-label-sm text-on-surface-variant">Entreprise</label>
-<input class="w-full px-4 py-3 rounded-lg border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-secondary-fixed focus:border-secondary transition-all outline-none" placeholder="Nom de votre société" type="text"/>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-<div class="flex flex-col gap-2">
-<label class="font-label-sm text-on-surface-variant">Poste</label>
-<input class="w-full px-4 py-3 rounded-lg border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-secondary-fixed focus:border-secondary transition-all outline-none" placeholder="Directeur Opérations" type="text"/>
-</div>
-<div class="flex flex-col gap-2">
-<label class="font-label-sm text-on-surface-variant">Email professionnel</label>
-<input class="w-full px-4 py-3 rounded-lg border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-secondary-fixed focus:border-secondary transition-all outline-none" placeholder="jean@entreprise.com" type="email"/>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-<div class="flex flex-col gap-2">
-<label class="font-label-sm text-on-surface-variant">Téléphone</label>
-<input class="w-full px-4 py-3 rounded-lg border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-secondary-fixed focus:border-secondary transition-all outline-none" placeholder="+33 6 00 00 00 00" type="tel"/>
-</div>
-<div class="flex flex-col gap-2">
-<label class="font-label-sm text-on-surface-variant">Secteur d'activité</label>
-<select class="w-full px-4 py-3 rounded-lg border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-secondary-fixed focus:border-secondary transition-all outline-none">
-<option>Assurance santé</option>
-<option>Assurance automobile</option>
-<option>Assurance habitation</option>
-<option>Banque / finance</option>
-<option>Hôtellerie</option>
-<option>Autre secteur documentaire</option>
-</select>
-</div>
-</div>
-<div class="flex flex-col gap-2">
-<label class="font-label-sm text-on-surface-variant">Votre message</label>
-<textarea class="w-full px-4 py-3 rounded-lg border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-secondary-fixed focus:border-secondary transition-all outline-none" placeholder="Décrivez le flux documentaire ou le cas d’usage que vous souhaitez automatiser..." rows="4"></textarea>
-</div>
-<button class="w-full primary-gradient-btn text-white py-4 rounded-lg font-button text-lg" type="submit">
-                        Envoyer ma demande
-                    </button>
-<p class="text-center font-label-sm text-outline">Réponse garantie sous 24 heures ouvrées.</p>
-</form>
-</div>
-<!-- Side Bento Grid -->
-<div class="lg:col-span-4 flex flex-col gap-gutter">
-<!-- Bloc Démo -->
-<div class="ai-accent-bg p-8 rounded-[16px] border border-blue-100 flex flex-col gap-4">
-<div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm text-blue-600">
-<span class="material-symbols-outlined text-h3" data-icon="calendar_month">calendar_month</span>
-</div>
-<h3 class="font-h3 text-h3 text-primary">Planifier une démo</h3>
-<p class="text-on-secondary-container">Une session de 30 minutes pour découvrir comment TufraTech extrait, interprète, valide et synchronise vos documents métiers avec vos systèmes existants.</p>
-<a class="mt-4 flex items-center justify-between group font-button text-blue-700" href="#">
-                        Réserver un créneau
-                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</a>
-</div>
-<!-- Info Contact -->
-<div class="glass-card p-8 rounded-[16px] flex flex-col gap-stack-lg">
-<h4 class="font-label-sm text-outline uppercase tracking-widest">Coordonnées</h4>
-<div class="flex flex-col gap-stack-md">
-<div class="flex items-start gap-4">
-<div class="text-blue-600">
-<span class="material-symbols-outlined">mail</span>
-</div>
-<div>
-<p class="font-label-sm text-outline">Email</p>
-<p class="font-body-md text-primary font-medium">contact@tufratech.com</p>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<div class="text-blue-600">
-<span class="material-symbols-outlined">call</span>
-</div>
-<div>
-<p class="font-label-sm text-outline">Téléphone</p>
-<p class="font-body-md text-primary font-medium">+216 92 755 818</p>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<div class="text-blue-600">
-<span class="material-symbols-outlined">location_on</span>
-</div>
-<div>
-<p class="font-label-sm text-outline">Localisation</p>
-<p class="font-body-md text-primary font-medium">Sfax, Tunisie</p>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<div class="text-blue-600">
-<span class="material-symbols-outlined">hub</span>
-</div>
-<div>
-<p class="font-label-sm text-outline">LinkedIn</p>
-<a class="font-body-md text-blue-700 hover:underline" href="#">/company/tufratech</a>
-</div>
-</div>
-</div>
-</div>
-<!-- Map / Office Visual -->
-<div class="rounded-[16px] overflow-hidden h-48 relative shadow-sm border border-slate-200">
-<img class="w-full h-full object-cover" data-alt="A modern professional Tunisian tech startup office with a clean blue and white aesthetic, representing AI, document automation, and insurance workflows. The environment is bright, trustworthy, and enterprise-oriented, suitable for B2B software and digital transformation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEMG7BwPPwEmDEImSI0YQtuW1QgNUU1chLC2oma8vUdwOEKaEQZOa_BqvDeesJ3ExSyOObf2yChnSVTUZteMwQU_2aEsDlDWMYR2XUJTigzn-8iZ5wLkFgMtwRlxdaLAMI35cR0M004KJDKnk033g5pAA4xWtuULMdaRK5GhzL_X1-ftmQP6onRgux3649_lt8XMY9YHbIMEft_eVxiDvzkVcFVTbiEAEmBczbPrKOWIPu_NsJfZ1dUCagjJKIFJML6OYkMnrR1OkC"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex items-end p-6">
-<span class="text-white font-button flex items-center gap-2">
-<span class="material-symbols-outlined text-sm">near_me</span>
-                            TufraTech — Sfax, Tunisie
-                        </span>
-</div>
-</div>
-</div>
-</div>
+
+<main class="max-w-7xl mx-auto px-6 py-16">
+    <section class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 mb-6 border border-blue-100 text-xs font-bold uppercase tracking-wider">
+            <span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+            Intelligence Documentaire
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-[#1a365e] mb-4">Parlons de vos projets</h1>
+        <p class="text-slate-500 max-w-2xl mx-auto">Notre équipe vous accompagne pour analyser vos documents et automatiser vos décisions métiers.</p>
+    </section>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- FORMULAIRE -->
+        <div class="lg:col-span-8 glass-card p-8 md:p-10 rounded-3xl">
+            <form id="contact-form" action="https://formspree.io/f/xwvypnqb" method="POST" class="space-y-6">
+                
+                <!-- Ligne 1: Nom & Email -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Nom complet</label>
+                        <input name="name" required class="w-full px-4 py-3 rounded-xl border-slate-200 bg-white/50 focus:ring-2 focus:ring-blue-500 transition-all outline-none" placeholder="Jean Dupont" type="text"/>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Email professionnel</label>
+                        <input name="email" required class="w-full px-4 py-3 rounded-xl border-slate-200 bg-white/50 focus:ring-2 focus:ring-blue-500 transition-all outline-none" placeholder="contact@entreprise.com" type="email"/>
+                    </div>
+                </div>
+
+                <!-- Ligne 2: Entreprise & Poste -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Entreprise</label>
+                        <input name="company" required class="w-full px-4 py-3 rounded-xl border-slate-200 bg-white/50 focus:ring-2 focus:ring-blue-500 transition-all outline-none" placeholder="Nom de la société" type="text"/>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Poste / Fonction</label>
+                        <input name="job_title" class="w-full px-4 py-3 rounded-xl border-slate-200 bg-white/50 focus:ring-2 focus:ring-blue-500 transition-all outline-none" placeholder="ex: Directeur Opérations" type="text"/>
+                    </div>
+                </div>
+
+                <!-- Ligne 3: Téléphone & Secteur -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Téléphone</label>
+                        <input name="phone" class="w-full px-4 py-3 rounded-xl border-slate-200 bg-white/50 focus:ring-2 focus:ring-blue-500 transition-all outline-none" placeholder="+216 ..." type="tel"/>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Secteur d'activité</label>
+                        <select name="sector" class="w-full px-4 py-3 rounded-xl border-slate-200 bg-white/50 focus:ring-2 focus:ring-blue-500 transition-all outline-none">
+                            <option value="Assurance santé">Assurance santé</option>
+                            <option value="Assurance automobile">Assurance automobile</option>
+                            <option value="Assurance habitation">Assurance habitation</option>
+                            <option value="Banque / finance">Banque / finance</option>
+                            <option value="Hôtellerie">Hôtellerie</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Message -->
+                <div class="flex flex-col gap-2">
+                    <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Message / Besoin</label>
+                    <textarea name="message" required class="w-full px-4 py-3 rounded-xl border-slate-200 bg-white/50 focus:ring-2 focus:ring-blue-500 transition-all outline-none" placeholder="Décrivez votre flux documentaire..." rows="4"></textarea>
+                </div>
+
+                <button id="submit-btn" class="w-full primary-gradient-btn text-white py-4 rounded-xl font-bold text-lg flex justify-center items-center gap-3 active:scale-[0.98] transition-transform" type="submit">
+                    <span id="btn-text">Envoyer ma demande</span>
+                    <div id="btn-loader" class="loader"></div>
+                </button>
+            </form>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="lg:col-span-4 flex flex-col gap-6">
+            <div class="ai-accent-bg p-8 rounded-3xl border border-blue-100 shadow-sm">
+                <span class="material-symbols-outlined text-blue-600 mb-4">contact_support</span>
+                <h3 class="text-xl font-bold text-[#1a365e] mb-2">Support technique</h3>
+                <p class="text-sm text-slate-600">Besoin d'une assistance directe sur nos APIs ou d'un conseil d'intégration ?</p>
+                <p class="mt-4 text-blue-700 font-bold text-sm">sales@tufratech.com</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Informations</h4>
+                <div class="space-y-4 text-sm font-medium">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-blue-500 text-lg">mail</span>
+                        <span>contact@tufratech.com</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-blue-500 text-lg">location_on</span>
+                        <span>Sfax, Tunisie</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
-<!-- Footer -->
-<footer class="bg-slate-50 dark:bg-slate-900 full-width border-t border-slate-200 dark:border-slate-800">
-<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 max-w-7xl mx-auto gap-8">
-<div class="flex flex-col gap-4">
-<img 
-  src="logo_tufra.png" 
-  alt="TufraTech Logo" 
-  class="w-[300px]"
-/>
-<p class="font-['Inter'] text-sm text-slate-500 dark:text-slate-400">© 2024 TufraTech. Tous droits réservés. Intelligence documentaire pour l’assurance et la santé.</p>
-</div>
-<nav class="flex flex-wrap gap-6 justify-center">
-<a class="font-['Inter'] text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline transition-all opacity-80 hover:opacity-100" href="#">Mentions Légales</a>
-<a class="font-['Inter'] text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline transition-all opacity-80 hover:opacity-100" href="#">Politique de Confidentialité</a>
-<a class="font-['Inter'] text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline transition-all opacity-80 hover:opacity-100" href="#">Conditions Générales</a>
-<a class="font-['Inter'] text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline transition-all opacity-80 hover:opacity-100" href="#">Support</a>
-</nav>
-</div>
-</footer>
-</body></html>
+
+<script>
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnLoader = document.getElementById('btn-loader');
+    const toast = document.getElementById('toast');
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+        
+        submitBtn.disabled = true;
+        btnText.innerText = "Envoi...";
+        btnLoader.style.display = "block";
+
+        const data = new FormData(event.target);
+
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                toast.classList.add('show');
+                form.reset();
+                setTimeout(() => toast.classList.remove('show'), 5000);
+            } else {
+                alert("Erreur lors de l'envoi.");
+            }
+        }).catch(error => {
+            alert("Vérifiez votre connexion.");
+        }).finally(() => {
+            submitBtn.disabled = false;
+            btnText.innerText = "Envoyer ma demande";
+            btnLoader.style.display = "none";
+        });
+    }
+
+    form.addEventListener("submit", handleSubmit);
+</script>
+
+<script>
+    // Mobile Menu Toggle Logic
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
+</body>
+</html>

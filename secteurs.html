@@ -67,6 +67,7 @@
   body { font-family: 'Inter', sans-serif; background-color: #faf9fd; }
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
   .bg-gradient-primary { background: linear-gradient(135deg, #1a365e 0%, #232f5d 40%, #0f78be 100%); }
+  .primary-gradient-btn { background: linear-gradient(135deg, #002046 0%, #1a365e 100%); }
   .bg-soft-gradient { background: linear-gradient(135deg, rgba(214,227,255,.45) 0%, rgba(105,198,225,.12) 100%); }
   .custom-card-shadow { box-shadow: 0 8px 30px rgba(26, 54, 94, 0.08); }
   .ai-glow { background: radial-gradient(circle at center, rgba(105,198,225,.18) 0%, transparent 65%); }
@@ -89,9 +90,28 @@
 <a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200" href="security.html">Sécurité &amp; Intégration</a>
 <a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200" href="contact.html">Contact</a>
 </nav>
-<button class="primary-gradient-btn text-white px-6 py-2.5 rounded-lg font-button active:scale-95 transition-transform duration-150">
-                Demander une démo
-            </button>
+
+<div class="flex items-center gap-4">
+    <!-- Desktop Button -->
+    <a href="contact.html" class="hidden md:block primary-gradient-btn text-white px-6 py-2.5 rounded-lg font-button active:scale-95 transition-transform duration-150">
+        Demander une démo
+    </a>
+    <!-- Mobile Menu Button -->
+    <button id="menu-btn" class="md:hidden text-primary p-2 focus:outline-none">
+        <span class="material-symbols-outlined text-32px">menu</span>
+    </button>
+</div>
+</div>
+
+<!-- Mobile Dropdown Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-8 py-6 flex flex-col gap-4 animate-in slide-in-from-top duration-300">
+    <a class="text-slate-600 font-medium py-2 border-b border-slate-50" href="index.html">Accueil</a>
+    <a class="text-blue-700 font-semibold py-2 border-b border-slate-50" href="secteurs.html">Solution</a>
+    <a class="text-slate-600 font-medium py-2 border-b border-slate-50" href="security.html">Sécurité &amp; Intégration</a>
+    <a class="text-slate-600 font-medium py-2 border-b border-slate-50" href="contact.html">Contact</a>
+    <a href="contact.html" class="primary-gradient-btn text-white px-6 py-3 rounded-lg font-button text-center mt-2">
+        Demander une démo
+    </a>
 </div>
 </header>
 
@@ -109,7 +129,7 @@
         La plateforme transforme les documents d’assurance en données contrôlées, traçables et prêtes à la décision — avec un focus stratégique sur l’assurance santé.
       </p>
       <div class="flex flex-wrap gap-4">
-        <button class="bg-gradient-primary text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:opacity-90 transition-opacity">Demander une démo</button>
+        <a href="contact.html" class="bg-gradient-primary text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:opacity-90 transition-opacity inline-block">Demander une démo</a>
         <button class="border border-outline text-primary px-8 py-4 rounded-xl font-semibold hover:bg-surface-container-low transition-colors">Voir le fonctionnement</button>
       </div>
     </div>
@@ -267,8 +287,8 @@
     <h2 class="font-h1 text-h1 mb-8">Identifiez votre premier flux à automatiser</h2>
     <p class="text-lg text-blue-100 mb-12 leading-relaxed">Nos équipes peuvent analyser vos documents, vos règles métier et votre environnement SI afin de proposer un pilote adapté à vos priorités opérationnelles.</p>
     <div class="flex flex-col sm:flex-row gap-6 justify-center">
-      <button class="px-10 py-5 bg-white text-primary rounded-xl font-semibold shadow-xl hover:bg-surface-container transition-all active:scale-95">Demander une démo</button>
-      <button class="px-10 py-5 border border-white/40 text-white rounded-xl font-semibold hover:bg-white/10 transition-all active:scale-95">Discuter avec notre équipe</button>
+      <a href="contact.html" class="px-10 py-5 bg-white text-primary rounded-xl font-semibold shadow-xl hover:bg-surface-container transition-all active:scale-95 inline-block">Demander une démo</a>
+      <a href="contact.html" class="px-10 py-5 border border-white/40 text-white rounded-xl font-semibold hover:bg-white/10 transition-all active:scale-95 inline-block">Discuter avec notre équipe</a>
     </div>
   </div>
 </section>
@@ -293,5 +313,15 @@
     </div>
   </div>
 </footer>
+
+<script>
+    // Mobile Menu Toggle Logic
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
 </body>
 </html>
