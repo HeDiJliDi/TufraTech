@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#b8c4fb",
+                    "secondary-container": "#bbc7fe",
+                    "on-surface-variant": "#44474e",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#2f3033",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#cfe5ff",
+                    "surface-dim": "#dad9dd",
+                    "on-primary-fixed-variant": "#2d4770",
+                    "on-background": "#1a1b1e",
+                    "secondary-fixed": "#dde1ff",
+                    "primary-fixed": "#d6e3ff",
+                    "inverse-on-surface": "#f1f0f4",
+                    "on-tertiary-fixed-variant": "#004a79",
+                    "on-primary-container": "#86a0ce",
+                    "surface-bright": "#faf9fd",
+                    "surface-container": "#efedf1",
+                    "surface-variant": "#e3e2e6",
+                    "on-error": "#ffffff",
+                    "primary-container": "#1a365e",
+                    "outline-variant": "#c4c6cf",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#465282",
+                    "secondary": "#505c8d",
+                    "surface": "#faf9fd",
+                    "tertiary-container": "#00385e",
+                    "on-primary-fixed": "#001b3d",
+                    "on-secondary-fixed": "#0a1745",
+                    "primary-fixed-dim": "#adc7f8",
+                    "on-surface": "#1a1b1e",
+                    "on-primary": "#ffffff",
+                    "background": "#faf9fd",
+                    "surface-container-highest": "#e3e2e6",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f4f3f7",
+                    "tertiary-fixed-dim": "#9acbff",
+                    "outline": "#74777f",
+                    "tertiary": "#00223c",
+                    "primary": "#002046",
+                    "inverse-primary": "#adc7f8",
+                    "surface-tint": "#455f89",
+                    "surface-container-high": "#e9e7eb",
+                    "on-tertiary-container": "#52a4ed",
+                    "on-secondary-fixed-variant": "#384473",
+                    "on-tertiary-fixed": "#001d34"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "margin-page": "48px",
+                    "section-gap": "80px",
+                    "stack-md": "16px",
+                    "stack-sm": "8px",
+                    "gutter": "24px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "h3": ["Inter"],
+                    "h1": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h2": ["Inter"],
+                    "button": ["Inter"]
+            },
+            "fontSize": {
+                    "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "button": ["16px", {"lineHeight": "1", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #faf9fd; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(226, 232, 240, 0.8); }
+        .premium-shadow { box-shadow: 0 4px 20px rgba(26, 54, 94, 0.05); }
+        .ai-gradient-bg { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); }
+    </style>
+</head>
+<body class="antialiased text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-white/90 backdrop-blur-md dark:bg-slate-950/90 docked full-width top-0 sticky z-50 border-b border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<img 
+  src="logo_tufra.png" 
+  alt="TufraTech Logo" 
+  class="h-10 w-auto"
+/>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200" href="index.html">Accueil</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200" href="secteurs.html">Solution</a>
+<a class="text-blue-700 dark:text-blue-400 font-semibold border-b-2 border-blue-700 dark:border-blue-400 pb-1 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200" href="security.html">Sécurité &amp; Intégration</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200" href="contact.html">Contact</a>
+</nav>
+<button class="primary-gradient-btn text-white px-6 py-2.5 rounded-lg font-button active:scale-95 transition-transform duration-150">
+                Demander une démo
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative py-24 overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center">
+<div>
+<span class="inline-block px-4 py-1.5 mb-6 text-label-sm uppercase tracking-widest text-primary-container bg-blue-50 rounded-full">Sécurité &amp; Intégration</span>
+<h1 class="font-h1 text-h1 text-primary mb-6">Sécurité et intégration pour environnements sensibles</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl">
+                        TufraTech s’appuie sur une architecture sécurisée, traçable et intégrable, pensée pour protéger les flux documentaires sensibles et s’insérer dans les systèmes d’information des assureurs.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-primary-container text-white px-8 py-4 rounded-xl font-button hover:shadow-lg transition-all">Demander une démo sécurisée</button>
+<button class="border border-outline text-primary px-8 py-4 rounded-xl font-button hover:bg-surface-container transition-all">Parler à un expert</button>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-3xl overflow-hidden glass-card premium-shadow p-4">
+<img alt="Sécurité Réseau" class="w-full h-full object-cover rounded-2xl" data-alt="A highly sophisticated digital visualization of a secure data network, featuring glowing blue nodes and interconnected light pathways on a deep navy background. The atmosphere is professional and high-tech, evoking a sense of absolute digital security and reliability. The lighting is low-key with vibrant cerulean accents, reflecting a modern B2B SaaS aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUF7T3_7Et9h6ZuAmdf4CJHZk8wpDYt8l7moMt-vMvZyRSRF1_NV4_cM6aj4c3ymCuOJk2uwiFgFKZiGjH56fc42zVQnTeWpNvSckuuSNGhCYyR97vVf0BmmcArrjSPzs1QjdYeLPeBrmpYosu5wcpn5NjbKcO3HayTzHK7L5FrpKHUPuLq1WHP0xpNHCx-5U_uZjaVJhZpoiMJ6vsuqfXgQI-IjpSJUQk2PU28gZDO8VPXG7UQ8C2CgOe8F2F9wl7OIAj4TjCJokn"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Sécurité: 4 piliers -->
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="font-h2 text-h2 text-primary mb-4">Les 4 piliers de notre architecture</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Une approche structurée pour protéger les données, contrôler les accès et garantir la traçabilité des traitements.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- On-premise -->
+<div class="p-8 rounded-2xl glass-card premium-shadow border-t-4 border-t-primary-container">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-6" data-icon="dns">dns</span>
+<h3 class="font-h3 text-h3 mb-4">On-premise</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Déployez TufraTech directement dans votre infrastructure pour un contrôle total sans sortie de données.</p>
+</div>
+<!-- Zero Trust -->
+<div class="p-8 rounded-2xl glass-card premium-shadow border-t-4 border-t-primary-container">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-6" data-icon="verified_user">verified_user</span>
+<h3 class="font-h3 text-h3 mb-4">Zero Trust</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Chaque accès et chaque échange critique est contrôlé, avec une logique de vérification continue, de segmentation des services et de limitation des droits.</p>
+</div>
+<!-- Traçabilité -->
+<div class="p-8 rounded-2xl glass-card premium-shadow border-t-4 border-t-primary-container">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-6" data-icon="history_edu">history_edu</span>
+<h3 class="font-h3 text-h3 mb-4">Traçabilité</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Journalisation des actions, des traitements et des règles appliquées afin de faciliter le contrôle, l’audit et le suivi des décisions.</p>
+</div>
+<!-- Accès -->
+<div class="p-8 rounded-2xl glass-card premium-shadow border-t-4 border-t-primary-container">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-6" data-icon="admin_panel_settings">admin_panel_settings</span>
+<h3 class="font-h3 text-h3 mb-4">Accès Granulaire</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Gestion fine des rôles et permissions afin que chaque utilisateur accède uniquement aux données et fonctions nécessaires.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Conformité & Souveraineté -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-16">
+<!-- Conformité -->
+<div class="flex flex-col justify-center">
+<h2 class="font-h2 text-h2 text-primary mb-6">Conformité &amp; souveraineté des données</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="gavel">gavel</span>
+</div>
+<div>
+<h4 class="font-h3 text-lg font-bold text-primary mb-2">Aligné RGPD</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Approche privacy-by-design visant à faciliter la protection, la maîtrise et la traçabilité des données personnelles.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="security">security</span>
+</div>
+<div>
+<h4 class="font-h3 text-lg font-bold text-primary mb-2">Principes ISO 27001</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">La plateforme est conçue selon des principes alignés avec les bonnes pratiques ISO 27001 en matière de gestion de la sécurité de l’information.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="public">public</span>
+</div>
+<div>
+<h4 class="font-h3 text-lg font-bold text-primary mb-2">Contrôle Local</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Déploiement on-premise aujourd’hui, avec une vision d’évolution vers un cloud privé sécurisé et hébergé localement selon les contraintes de chaque pays.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="rounded-2xl overflow-hidden h-64 premium-shadow">
+<img alt="Souveraineté" class="w-full h-full object-cover" data-alt="A detailed, abstract digital representation of the globe with glowing data points concentrated over Europe, emphasizing digital sovereignty. The visual style is clean and futuristic, using a palette of deep blues and whites. The lighting is soft and ambient, suggesting a secure and connected world managed with precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0qk9FjJ0ZWJMADNGBjLnHMfoRfbJ6ZzuTR3_PpymKn6JuL6m--fBHFrC88BOWMyU4nn1QUAYl4s-84mDTJDNV68yxnHn9uRtF8bCg45A5pUDRIFg_nNmo8TT67FT2lO9W3YZaeJArIkPvAokTkjsjMyLmBkf98ockef5FdCYtzqaBKhqlbFOZU1Ug9vgUGFZYPDdmd6LGysT1g780kPo-k4JJ4kXi85ad6OopKofJVWZ6tLLZWCMyRQY2L6BeCu_0sQstCLsqSB0X"/>
+</div>
+<div class="rounded-2xl overflow-hidden h-64 premium-shadow mt-8">
+<img alt="Datacenter" class="w-full h-full object-cover" data-alt="Modern server racks in a brightly lit, sterile data center environment. The lighting is a crisp, clean white with subtle blue reflections on the metallic surfaces. The perspective is symmetrical and ordered, conveying a sense of high-level organization and data integrity. Minimalist and high-tech feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwsEvMXIhmIQbUJ9kHdXYMfVbHGSzgEzk-kYNGrQTPXXinp3Ara4SuXoJM4Gr5xUk0rIeZAl52pj3Zo2lG9QzekdRUzz6n1fh8nFgWeJQNqA30H3JMQqHdKhSkcZ0JypZGoMlpnGNQoaLC61lEWBW0hv3aLfV2zFp0JrMGdPC4nD4xDkx4MAMkAAaiNMHD7NzqPqi-oDh1x5bbqWSJEWYwikuYI6uoUUTDdQ00KHwS3bIAh95rNQOvnhZvpeCoxN4CQOldi0te6sUn"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Intégration Bento Grid -->
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="font-h2 text-h2 text-primary mb-4">Une couche intelligente connectée à votre SI</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">TufraTech s’intègre à vos outils existants sans les remplacer, afin d’automatiser les flux documentaires critiques.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- ERP / GED -->
+<div class="md:col-span-2 p-10 rounded-3xl ai-gradient-bg premium-shadow flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="hub">hub</span>
+<h3 class="font-h3 text-h3 text-primary mb-4">Connecteurs ERP &amp; GED</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">Connecteurs et intégrations possibles avec ERP, GED, Core Insurance et applications métiers via APIs, exports sécurisés ou webhooks.</p>
+</div>
+<div class="mt-12 flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-white/60 rounded-full text-sm font-medium border border-blue-100">ERP</span>
+<span class="px-4 py-2 bg-white/60 rounded-full text-sm font-medium border border-blue-100">GED</span>
+<span class="px-4 py-2 bg-white/60 rounded-full text-sm font-medium border border-blue-100">Core Insurance</span>
+</div>
+</div>
+<!-- Core Insurance -->
+<div class="p-10 rounded-3xl bg-primary-container text-white flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-secondary-container text-4xl mb-6" data-icon="policy">policy</span>
+<h3 class="font-h3 text-h3 mb-4">Core Insurance</h3>
+<p class="font-body-md opacity-80">Transmission des données structurées vers vos systèmes d’assurance : remboursements, sinistres, contrats et dossiers clients.</p>
+</div>
+<div class="mt-8">
+<button class="text-secondary-container font-semibold flex items-center gap-2">Voir l’intégration <span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+<!-- Webhooks -->
+<div class="p-10 rounded-3xl glass-card premium-shadow">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-6" data-icon="webhook">webhook</span>
+<h3 class="font-h3 text-h3 text-primary mb-4">Webhooks &amp; API</h3>
+<p class="font-body-md text-on-surface-variant">API REST robuste et système de Webhooks pour déclencher des actions en temps réel sur vos événements métiers.</p>
+</div>
+<!-- AI Suggestion Area -->
+<div class="md:col-span-2 p-10 rounded-3xl border border-dashed border-primary-container/30 bg-blue-50/30 flex items-center gap-10">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-bold text-primary">Suggestion intelligente de classement</span>
+</div>
+<p class="font-body-md text-on-surface-variant">La plateforme peut analyser le contexte des documents afin de proposer leur classement, leur routage ou leur association au bon dossier.</p>
+</div>
+<div class="hidden sm:block w-48 h-32 rounded-xl glass-card border-primary-container/20 flex items-center justify-center">
+<div class="space-y-2">
+<div class="w-32 h-2 bg-primary-container/20 rounded-full"></div>
+<div class="w-24 h-2 bg-primary-container/10 rounded-full"></div>
+<div class="w-28 h-2 bg-primary-container/40 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24">
+<div class="max-w-5xl mx-auto px-8">
+<div class="bg-primary text-white rounded-[40px] p-16 text-center relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-h2 text-h2 mb-6">Prêt à intégrer TufraTech dans votre environnement SI ?</h2>
+<p class="font-body-lg text-body-lg opacity-80 mb-10 max-w-2xl mx-auto">Échangeons sur vos contraintes de sécurité, vos systèmes existants et les flux documentaires à automatiser.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-white text-primary px-10 py-4 rounded-xl font-button hover:bg-slate-100 transition-all">Discuter de votre architecture</button>
+<button class="border border-white/30 text-white px-10 py-4 rounded-xl font-button hover:bg-white/10 transition-all">Demander une démo sécurisée</button>
+</div>
+</div>
+<!-- Abstract Background Shape -->
+<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-500/20 blur-[100px] rounded-full"></div>
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-blue-900/40 blur-[100px] rounded-full"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 full-width border-t border-slate-200 dark:border-slate-800 font-['Inter'] text-sm">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 max-w-7xl mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<img 
+  src="logo_tufra.png" 
+  alt="TufraTech Logo" 
+  class="w-[300px]"
+/><p class="text-slate-500 dark:text-slate-400 text-center md:text-left max-w-xs">© 2024 TufraTech. Tous droits réservés. L'excellence opérationnelle par l'IA.</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline transition-all" href="#">Mentions Légales</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline transition-all" href="#">Politique de Confidentialité</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline transition-all" href="#">Conditions Générales</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline transition-all" href="#">Support</a>
+</nav>
+<div class="flex gap-4">
+<span class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-blue-900 dark:text-white opacity-80 hover:opacity-100 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xl" data-icon="language">language</span>
+</span>
+<span class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-blue-900 dark:text-white opacity-80 hover:opacity-100 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xl" data-icon="hub">hub</span>
+</span>
+</div>
+</div>
+</footer>
+</body></html>
